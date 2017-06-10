@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -14,17 +15,17 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
-    def get_children(self, dict, level=-1):
+    def get_children(self, menu_dict, level=-1):
         if level >= 0:
-            dict[self] = [level]
+            menu_dict[self] = [level]
         children = self.menu_set.all()
         if children:
             for child in children:
-                child.get_children(dict, level=level+1)
+                child.get_children(menu_dict, level=level + 1)
 
     def get_url(self):
         import urlparse
         if bool(urlparse.urlparse(self.url).netloc):
             return self.url
         else:
-            return "http://localhost:8000" + self.url
+            return "http://localhost:8000{0}".format(self.url)
