@@ -1,0 +1,20 @@
+<div class="list-group panel col-lg-3">
+{% for key,value in menu_dict.items %}
+    {% if value.0 == 0 %}
+        <div class="list-group-item" >
+            <a href="{{ key.get_url }}">{{ key }}</a><a href="#obj-{{ key.id }}" data-toggle="collapse" class="pull-right">+</a> </div>
+    {% elif value.0 > 0 %}
+        {% for _ in value.1 %}
+            <div class="collapse list-group-submenu" id="obj-{{ key.parent.id }}">
+            <div class="list-group-item" >
+            <a href="{{ key.get_url }}">{{ key }}</a><a href="#obj-{{ key.id }}" data-toggle="collapse" class="pull-right">+</a> </div>
+        {% endfor %}
+    {% elif value.0 < 0 %}
+        {% for _ in value.1 %}
+            </div>
+            <div class="list-group-item" >
+            <a href="{{ key.get_url }}">{{ key }}</a><a href="#obj-{{ key.id }}" data-toggle="collapse" class="pull-right">+</a> </div>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+</div>
