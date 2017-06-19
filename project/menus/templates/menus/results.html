@@ -1,22 +1,28 @@
 <div class="list-group panel col-lg-3">
-    {% for menu,diff,range_ in menu_list %}
-        {% if diff == 0 %}
+    {% for menu in menu_list %}
+        {% if menu.diff == 0 %}
             <div class="list-group-item">
                 <a href="{{ menu.get_url }}">{{ menu }}</a><a href="#obj-{{ menu.id }}" data-toggle="collapse"
                                                             class="pull-right">+</a></div>
-        {% elif diff > 0 %}
-            {% for _ in range_ %}
+        {% elif menu.diff > 0 %}
+            {% for _ in menu.diff_range %}
                 <div class="collapse list-group-submenu" id="obj-{{ menu.parent.id }}">
                 <div class="list-group-item">
                     <a href="{{ menu.get_url }}">{{ menu }}</a><a href="#obj-{{ menu.id }}" data-toggle="collapse"
                                                                 class="pull-right">+</a></div>
             {% endfor %}
-        {% elif diff < 0 %}
-            {% for _ in range_ %}
+        {% elif menu.diff < 0 %}
+            {% for _ in menu.diff_range %}
                 </div>
                 <div class="list-group-item">
                     <a href="{{ menu.get_url }}">{{ menu }}</a><a href="#obj-{{ menu.id }}" data-toggle="collapse"
                                                                 class="pull-right">+</a></div>
+            {% endfor %}
+        {% endif %}
+
+        {% if forloop.last %}
+            {% for _ in menu.level_range %}
+                </div>
             {% endfor %}
         {% endif %}
     {% endfor %}

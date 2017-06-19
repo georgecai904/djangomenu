@@ -12,6 +12,10 @@ class Menu(models.Model):
     url = models.CharField(max_length=200, blank=False, null=False)
     parent = models.ForeignKey('Menu', on_delete=models.CASCADE, blank=True, null=True)
 
+    def __init__(self, *args, **kwargs):
+        super(Menu, self).__init__(*args, **kwargs)
+        self.adds = {"level": -1}
+
     def __str__(self):
         return self.name
 

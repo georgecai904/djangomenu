@@ -1,24 +1,68 @@
 <div class="list-group panel col-lg-3">
-    <div class="list-group-item">
-        <a href="http://localhost:8000/menus/1">Home</a><a href="#obj-1" data-toggle="collapse" class="pull-right">+</a>
-    </div>
-    <div class="collapse list-group-submenu" id="obj-1">
-        <div class="list-group-item">
-            <a href="http://localhost:8000/menus/2">Contact Us</a><a href="#obj-2" data-toggle="collapse"
-                                                                     class="pull-right">+</a></div>
-        <div class="list-group-item">
-            <a href="http://localhost:8000/menus/3">About Us</a><a href="#obj-3" data-toggle="collapse"
-                                                                   class="pull-right">+</a></div>
-        <div class="collapse list-group-submenu" id="obj-2">
-            <div class="list-group-item">
-                <a href="http://localhost:8000/menus/4">Contact Details</a><a href="#obj-4" data-toggle="collapse"
-                                                                              class="pull-right">+</a></div>
-        </div>
-        <div class="list-group-item">
-            <a href="http://localhost:8000/admin">Admin</a><a href="#obj-5" data-toggle="collapse"
-                                                              class="pull-right">+</a></div>
-    </div>
+
+
     <div class="list-group-item">
         <a href="http://localhost:8000/admin">Admin</a><a href="#obj-5" data-toggle="collapse" class="pull-right">+</a>
     </div>
+
+
+    <div class="list-group-item">
+        <a href="http://localhost:8000/menus/1">Home</a><a href="#obj-1" data-toggle="collapse" class="pull-right"
+                                                           aria-expanded="true">+</a></div>
+
+
+    <div class="list-group-submenu collapse in" id="obj-1" aria-expanded="true">
+        <div class="list-group-item">
+            <a href="http://localhost:8000/menus/3">About Us</a><a href="#obj-3" data-toggle="collapse"
+                                                                   class="pull-right" aria-expanded="true">+</a></div>
+
+
+        <div class="list-group-submenu collapse in" id="obj-3" aria-expanded="true">
+            <div class="list-group-item">
+                <a href="http://localhost:80003">ChildofAboutUs2</a><a href="#obj-9" data-toggle="collapse"
+                                                                       class="pull-right">+</a></div>
+
+
+            <div class="list-group-item">
+                <a href="http://localhost:8000/">ChildofAboutUs</a><a href="#obj-8" data-toggle="collapse"
+                                                                      class="pull-right">+</a></div>
+
+
+        </div>
+        <div class="list-group-item">
+            <a href="http://localhost:8000/menus/2">Contact Us</a><a href="#obj-2" data-toggle="collapse"
+                                                                     class="pull-right" aria-expanded="true">+</a></div>
+
+
+        <div class="list-group-submenu collapse in" id="obj-2" aria-expanded="true">
+            <div class="list-group-item">
+                <a href="http://localhost:80001">ChildofContactUs3</a><a href="#obj-10" data-toggle="collapse"
+                                                                         class="pull-right">+</a></div>
+
+
+            <div class="list-group-item">
+                <a href="http://localhost:8000/">Test</a><a href="#obj-7" data-toggle="collapse"
+                                                            class="pull-right">+</a></div>
+
+
+            <div class="list-group-item">
+                <a href="http://localhost:8000/menus/4">Contact Details</a><a href="#obj-4" data-toggle="collapse"
+                                                                              class="pull-right">+</a></div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Copyright.</p>
+        </div>
+    </footer>
+    <script src="/static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap/bootstrap.js" type="text/javascript"></script>
+
+
 </div>

@@ -9,8 +9,8 @@ from .models import Menu
 
 
 def show_menus(request):
-    main_menu = Menu.objects.get(parent=None)
-    return render(request, "menus/menu_list.html", {'main_menu': main_menu})
+    # main_menu = Menu.objects.get(parent=None)
+    return render(request, "menus/menu_list.html", {'top_menu': "About Us"})
 
 
 def show_menu(request, menu_id):
